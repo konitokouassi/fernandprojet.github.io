@@ -1,0 +1,50 @@
+<html>
+  <head>
+    <title>Gantt Chart editor</title>
+    <script src="../lib/jquery.js"></script>
+    <script src="../lib/underscore.js"></script>
+    <script src="../lib/backbone.js"></script>
+    <script src="../lib/backbone.localStorage.js"></script>
+    <script src="../jsganttchart.js"></script>
+    <script src="jsganttchart.editor.js"></script>
+    <script src="js/jquery-ui.js"></script>
+    <link rel="stylesheet" href="css/ui-lightness/jquery-ui.css" />
+    <link rel="stylesheet" href="../themes/default.css" />
+    <link rel="stylesheet" href="style.css" />
+    <script>
+      jQuery(document).ready(function () {
+        var gantt = JSGanttChart.create({
+            resources: {
+              programmer: "Fernand",
+              supervisor: "Ange",
+              cosupervisor: "Yaya",
+            },
+            types: {
+              analysis: {
+                name: "Analysis",
+                color: "F2C545", // yellow
+              },
+              critical: {
+                name: "Critical",
+                color: "C73B0B", // red
+              },
+              programming: {
+                name: "Programming",
+                color: "#356AA0", // blue
+              },
+              documentation: {
+                name: "Documentation",
+                color: "#FF7400", // orange
+              },
+            },
+            localStorage: new Store("JSGanttChartStore"),
+          }),
+          editor = JSGanttChart.Editor.create({ gantt: gantt });
+        jQuery(".container").append(editor.render().el);
+      });
+    </script>
+  </head>
+  <body>
+    <div class="container"></div>
+  </body>
+</html>

@@ -1,0 +1,213 @@
+.gantt-container, .gantt-container table {
+	font-family: verdana, sans-serif;
+	font-size: 11px;
+	color: #333;
+	white-space: nowrap;
+}
+
+.gantt-container {
+	overflow: auto;
+}
+
+	.gantt-container table {
+		border-spacing: 0;
+		table-layout: fixed;
+		background: white;
+	}
+
+		.gantt-container tr {	
+			height: 18px;
+		}
+
+		.gantt-container td,
+		.gantt-container th {
+			border-right: 1px solid #ddd;
+			border-bottom: 1px solid #ddd;
+			padding: 2px;
+		}
+
+			.gantt-container .markend {
+				border-right-color: #bbb;
+			}
+
+			.gantt-container .weekend {
+				background: #f7f7f7;
+			}
+
+		.gantt-container th {
+			font-weight: bold;
+		}
+		.gantt-container .important {
+			color: red;
+		}
+
+.gantt-key {
+	position: fixed;
+	margin-top: 30px;
+}
+
+.gantt-data-table {
+	display: inline-block;
+	border-top: 1px solid #ddd;
+	border-left: 1px solid #ddd;
+	position: fixed;
+	z-index: 40;
+}
+
+	.gantt-data-table th {
+		padding-top: 20px;
+	}
+
+	@-moz-document url-prefix() {
+		.gantt-data-table th {
+			padding-top: 22px;
+		}
+	}
+
+.gantt-table {
+	display: inline-block;
+	border-top: 1px solid #ddd;
+	vertical-align: top;
+	white-space: nowrap;
+	margin-left: 480px;
+}
+	
+	.gantt-table td .cell {
+		width: 18px;
+	}
+	
+	.gantt-element-holder {
+		position: relative;
+	}
+	tr.child, .row.child td {
+		background: #efe;
+	}
+
+	.arrowline {
+		position: absolute;
+		border-right: 1px solid red;
+		border-top: 1px solid red;
+		z-index: 15;
+		margin-right: -3px;
+		padding-left: 5px;
+	}
+
+	.arrowhead {
+		position: absolute;
+		right: -6px;
+		bottom: 0;
+		border-left: 6px solid transparent;
+        border-right: 6px solid transparent;
+        border-top: 6px solid red;
+        width: 0;
+        height: 0;
+	}
+
+		.gantt-element {
+			position: absolute;
+			top: -1px;
+			left: -1px;
+			border-bottom: 15px solid blue;
+			z-index: 10;
+			opacity: 0.8;
+		}
+
+		tr.highlight td {
+			background: yellow !important;
+		}
+
+		tr.highlight .gantt-element {
+			opacity: 1;
+		}
+
+		.done {
+			position: absolute;
+			top: 2px;
+			border-bottom: 11px solid rgba(0, 0, 0, 0.5);
+		}
+
+		.donetext {
+			font-size: 9px;
+			font-weight: bold;
+			text-shadow: black 1px 1px 4px;
+			color: white;
+			position: absolute;
+			z-index: 20;
+			top: 0;
+			right: 0;
+			left: 0;
+			bottom: 0;
+			text-align: center;
+			line-height: 140%;
+		}
+
+		.slack {
+			position: absolute;
+			top: 7px;
+			height: 3px;
+			background: black;
+		}
+
+			.slack-end {
+				position: absolute;
+				right: 0;
+				top: -4px;
+				height: 10px;
+				width: 3px;
+				background: black;
+			}
+
+		.gantt-element.critical {
+			background: red;
+		}
+
+		/*.gantt-container .row, .gantt-container tr {
+			MozUserSelect: none;
+			cursor: pointer;
+		}*/
+	
+	.finished { color: green; }
+	.in-progress { color: orange; }
+	.not-started { color: #999; }
+
+	.gantt-key > div {
+		margin-bottom: 2px;
+	}
+
+	.gantt-key .color {
+		width: 20px;
+		height: 14px;
+		display: inline-block;
+		margin: 0 2px 0 0;
+		vertical-align: top;
+	}
+
+
+.icon {
+	position: absolute;
+	background: rgba(0, 0, 0, 0.2) url('default.images/urgent.png') no-repeat left top;
+	border-radius: 3px;
+	z-index: 15;
+	top: 1px;
+	font-weight: bold;
+	font-size: 9px;
+	padding: 2px 3px 2px 20px;
+	margin-left: 1px;
+	color: white;
+	text-shadow: black 1px 1px 4px;
+}
+
+td, th {
+	position: relative;
+}
+
+th .deadline {
+	border-top: 3px solid red;
+	border-left: 3px solid transparent;
+	border-right: 3px solid transparent;
+	height: 0;
+	width: 0;
+	position: absolute;
+	bottom: 0;
+	left: 40%;
+}
